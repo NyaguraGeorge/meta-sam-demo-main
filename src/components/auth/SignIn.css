@@ -1,0 +1,25 @@
+.signin-header {
+  /* align-self: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  font-family: "Bahnschrift", sans-serif;
+  font-size: 30px;
+  /* padding-bottom: 0px; */
+  padding-top: 32px;
+}
+.signin-image-container {
+  /* height: "100%"; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: "100%";
+  margin-bottom: 20px;
+}
+[class^="data-amplify-route"] {
+  background-color: aqua;
+}
+.signin-footer-container {
+  margin: 0;
+}
