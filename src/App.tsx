@@ -28,6 +28,8 @@ import AppContext from "./components/hooks/createContext";
 import LegalText from "./components/LegalText";
 import NavBar from "./components/Navbar";
 import Stage from "./components/Stage";
+// import cyberLogo from "./axai-transparent-w.png";
+// import profilePicture from "./pro-pic.jpg";
 // import CookieText from "./CookieText";
 
 // console.log("hi")
@@ -515,6 +517,8 @@ const App = () => {
     setPredMasks(null);
   };
 
+
+
   return (
     <>
       <Routes>
@@ -572,9 +576,11 @@ const App = () => {
           path="/demo"
           element={
             <div className={`flex flex-col h-full overflow-hidden`}>
-              {/*
-              <NavBar resetState={handleResetState} />
-              */}
+
+              <NavBar
+              // resetState={handleResetState} 
+              />
+
               <Stage
                 scale={modelScale}
                 handleResetState={handleResetState}
@@ -586,6 +592,7 @@ const App = () => {
                 image={image}
               />
               <Footer />
+              {/* BBB */}
             </div>
           }
         />

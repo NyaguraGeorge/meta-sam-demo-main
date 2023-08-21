@@ -319,7 +319,7 @@ const Stage = ({
         break;
       default:
         break;
-        // return null;
+      // return null;
     }
   };
 
@@ -637,11 +637,10 @@ const Stage = ({
                 allText={[allText, setAllText]}
               />
               <div
-                className={`absolute top-0 right-0 bottom-0 left-0 bg-opacity-70 bg-black flex items-center justify-center text-white text-lg font-bold transition-opacity ${
-                  shouldShowHomepageOverlay
-                    ? "opacity-100"
-                    : "opacity-0 pointer-events-none"
-                }`}
+                className={`absolute top-0 right-0 bottom-0 left-0 bg-opacity-70 bg-black flex items-center justify-center text-white text-lg font-bold transition-opacity ${shouldShowHomepageOverlay
+                  ? "opacity-100"
+                  : "opacity-0 pointer-events-none"
+                  }`}
                 id="canvas-overlay"
               >
                 <FeatureSummary
@@ -660,9 +659,9 @@ const Stage = ({
           {image || isToolBarUpload ? (
             <div className="flex items-stretch justify-center flex-1 overflow-hidden stage">
               {showLoadingModal ? (
-                <LoadingModal handleResetState={handleResetState} />
-              ) : (
                 <PointsModal />
+              ) : (
+                <LoadingModal handleResetState={handleResetState} />
               )}
               <SegmentDrawer
                 handleResetState={handleResetState}

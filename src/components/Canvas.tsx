@@ -418,9 +418,8 @@ const Canvas = ({
         </div>
       )}
       <div
-        className={`absolute w-full h-full overflow-auto Canvas-wrapper md:overflow-visible md:w-auto md:h-auto absolute-center ${
-          !isStandalone ? "pt-36 md:pt-0" : ""
-        }`}
+        className={`absolute w-full h-full overflow-auto Canvas-wrapper md:overflow-visible md:w-auto md:h-auto absolute-center ${!isStandalone ? "pt-36 md:pt-0" : ""
+          }`}
         ref={scrollRef}
       >
         <div
@@ -441,27 +440,24 @@ const Canvas = ({
               setIsHovering(false);
             }
           }}
-          className={`Canvas relative ${
-            isLoading ? "pointer-events-none" : ""
-          } ${
-            shouldShowAnimation
+          className={`Canvas relative ${isLoading ? "pointer-events-none" : ""
+            } ${shouldShowAnimation
               ? "rotate"
               : isHovering === false
-              ? "unrotate"
-              : ""
-          } ${isMultiMaskMode ? "multi-mask-mode" : ""}`}
+                ? "unrotate"
+                : ""
+            } ${isMultiMaskMode ? "multi-mask-mode" : ""}`}
           style={scaledDimensionsStyle}
         >
           <div className="absolute w-full h-full bg-black pointer-events-none background"></div>
           <img
             src={image.src}
-            className={`absolute w-full h-full pointer-events-none ${
-              isLoading ||
-              (hasClicked && !isMultiMaskMode) ||
-              (isMultiMaskMode && clicks)
+            className={`absolute w-full h-full pointer-events-none ${isLoading ||
+                (hasClicked && !isMultiMaskMode) ||
+                (isMultiMaskMode && clicks)
                 ? "opacity-50"
                 : ""
-            }`}
+              }`}
             style={{ margin: 0 }}
           ></img>
           {segmentTypes !== "All" &&
@@ -562,38 +558,38 @@ const Canvas = ({
               />
               {segmentTypes !== "All"
                 ? svg &&
-                  scale &&
-                  hasClicked && (
-                    <Path
-                      data={svg.join(" ")}
-                      fill="black"
-                      scaleX={canvasScale / scale.uploadScale}
-                      scaleY={canvasScale / scale.uploadScale}
-                      lineCap="round"
-                      lineJoin="round"
-                      opacity={0}
-                      preventDefault={false}
-                    />
-                  )
+                scale &&
+                hasClicked && (
+                  <Path
+                    data={svg.join(" ")}
+                    fill="black"
+                    scaleX={canvasScale / scale.uploadScale}
+                    scaleY={canvasScale / scale.uploadScale}
+                    lineCap="round"
+                    lineJoin="round"
+                    opacity={0}
+                    preventDefault={false}
+                  />
+                )
                 : allsvg &&
-                  scale &&
-                  allsvg.map(({ point_coord, svg }, i) => (
-                    <Path
-                      key={i}
-                      data={svg.join(" ")}
-                      fill={colors[i % colors.length]}
-                      stroke="blue"
-                      strokeWidth={3}
-                      scaleX={canvasScale / scale.uploadScale}
-                      scaleY={canvasScale / scale.uploadScale}
-                      opacity={0.5}
-                      lineCap="round"
-                      lineJoin="round"
-                      preventDefault={false}
-                      visible={false}
-                      // visible={true}
-                    />
-                  ))}
+                scale &&
+                allsvg.map(({ point_coord, svg }, i) => (
+                  <Path
+                    key={i}
+                    data={svg.join(" ")}
+                    fill={colors[i % colors.length]}
+                    stroke="blue"
+                    strokeWidth={3}
+                    scaleX={canvasScale / scale.uploadScale}
+                    scaleY={canvasScale / scale.uploadScale}
+                    opacity={0.5}
+                    lineCap="round"
+                    lineJoin="round"
+                    preventDefault={false}
+                    visible={false}
+                  // visible={true}
+                  />
+                ))}
             </Layer>
             <Layer name="animateAllSvg">
               {segmentTypes === "All" && shouldAllAnimate && animateAllSvg()}

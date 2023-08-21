@@ -188,10 +188,9 @@ const ImagePicker = ({
           </span>
         </div>
       </div>
-      <div
-        className={`h-full w-full overflow-y-scroll pb-20 ${
-          showGallery ? "fade-in" : ""
-        }`}
+      {/* <div
+        className={`h-full w-full overflow-y-scroll pb-20 ${showGallery ? "fade-in" : ""
+          }`}
       >
         <PhotoAlbum
           layout={isMobile ? "columns" : "rows"}
@@ -200,7 +199,7 @@ const ImagePicker = ({
           onClick={(e: any) => handleSelectedImage(e.event.target.src)}
           renderPhoto={image}
         />
-      </div>
+      </div> */}
     </div>
   );
 };
